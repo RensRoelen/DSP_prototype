@@ -25,24 +25,6 @@ The knowledge graph includes information about:
 - Permits (issuer, dates, scope)
 - Steel Beams (diameter, material grade)
 
-## Requirements
-
-```
-fastapi==0.109.0
-uvicorn==0.27.0
-google-generativeai==0.3.2
-rdflib==7.0.0
-PyPDF2==3.0.1
-python-docx==1.1.0
-pandas==2.2.0
-openpyxl==3.1.2
-Pillow==10.2.0
-python-multipart==0.0.9
-pydantic==2.6.1
-pyshacl==0.25.0
-marked==0.0.3
-```
-
 ## Setup
 
 1. Install dependencies:
