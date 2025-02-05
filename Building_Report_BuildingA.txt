@@ -1,0 +1,36 @@
+Building Report: Building A
+
+General Information:
+- Building Name: Building A
+- Address: 123 Main Street, Amsterdam, NL
+- Construction Year: 2020
+- Architect: John Doe Architects
+- Total Floors: 5
+
+Rooms:
+1. Room 101:
+   - Type: Office
+   - Area: 50 square meters
+   - Steel Beams:
+       - Beam ID: SB101
+       - Diameter: 0.5 meters
+       - Material: Steel Grade S235
+
+2. Room 102:
+   - Type: Conference Room
+   - Area: 75 square meters
+   - Steel Beams:
+       - Beam ID: SB102
+       - Diameter: 0.7 meters
+       - Material: Steel Grade S355
+
+3. Room 201:
+   - Type: Office
+   - Area: 45 square meters
+   - Steel Beams:
+       - Beam ID: SB201
+       - Diameter: 0.6 meters
+       - Material: Steel Grade S235
+
+Additional Notes:
+- The building complies with all structural safety regulations as of the inspection date (January 2025).

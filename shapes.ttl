@@ -1,0 +1,174 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/aec#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Building Shape
+ex:BuildingShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Building ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:address ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:constructionYear ;
+        sh:datatype xsd:gYear ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:architect ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:totalFloors ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:hasRoom ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:hasPermit ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+    ] .
+
+# Permit Shape
+ex:PermitShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Permit ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:isPermitFor ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:issuedBy ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:issueDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:expiryDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:permitScope ;
+        sh:nodeKind sh:BlankNode ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:safetyComplianceNote ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] .
+
+# Room Shape
+ex:RoomShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Room ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:type ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:area ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:hasSteelBeam ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+    ] .
+
+# Steel Beam Shape
+ex:SteelBeamShape
+    a sh:NodeShape ;
+    sh:targetClass ex:SteelBeam ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:diameter ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:material ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] .
+
+# Permit Scope Shape
+ex:PermitScopeShape
+    a sh:NodeShape ;
+    sh:targetClass ex:PermitScope ;
+    sh:property [
+        sh:path ex:approvedUse ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:maxOccupancy ;
+        sh:nodeKind sh:BlankNode ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:allowedModifications ;
+        sh:nodeKind sh:BlankNode ;
+        sh:minCount 1 ;
+    ] .
+
+# Occupancy Details Shape
+ex:OccupancyDetailsShape
+    a sh:NodeShape ;
+    sh:targetClass ex:OccupancyDetails ;
+    sh:property [
+        sh:path ex:maxOccupancyGroundFloor ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ex:maxOccupancyOtherFloors ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+    ] .
+
+# Modification Details Shape
+ex:ModificationDetailsShape
+    a sh:NodeShape ;
+    sh:targetClass ex:ModificationDetails ;
+    sh:property [
+        sh:path ex:addition ;
+        sh:datatype xsd:string ;
+        sh:minCount 2 ;  # Since there are two additions in the example
+    ] . 

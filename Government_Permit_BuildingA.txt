@@ -1,0 +1,21 @@
+Government Permit Document
+
+Permit Details:
+- Permit Number: PERMIT-2025-45678
+- Issued To: Building A, located at 123 Main Street, Amsterdam, NL
+- Issued By: Amsterdam City Council, Department of Urban Development
+- Issue Date: January 15, 2025
+- Expiry Date: January 15, 2030
+
+Permit Scope:
+1. Approved for commercial use.
+2. Maximum Occupancy per Floor:
+   - Ground Floor: 50 people
+   - Floors 1–4: 30 people each
+
+3. Structural Modifications Allowed:
+   - Addition of solar panels on the roof.
+   - Installation of an elevator system in the central shaft.
+
+Additional Notes:
+- This permit is contingent upon compliance with fire safety regulations.

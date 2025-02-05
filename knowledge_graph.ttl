@@ -1,0 +1,76 @@
+@prefix ex: <http://example.org/aec#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Building A (from the previous graph)
+ex:BuildingA a ex:Building ;
+    rdfs:label "Building A" ;
+    ex:address "123 Main Street, Amsterdam, NL" ;
+    ex:constructionYear "2020"^^xsd:gYear ;
+    ex:architect "John Doe Architects" ;
+    ex:totalFloors 5 ;
+    ex:hasRoom ex:Room101, ex:Room102, ex:Room201 ;
+    ex:hasPermit ex:PERMIT-2025-45678 .
+
+# Government Permit for Building A
+ex:PERMIT-2025-45678 a ex:Permit ;
+    rdfs:label "Permit PERMIT-2025-45678" ;
+    ex:isPermitFor ex:BuildingA ;
+    ex:issuedBy "Amsterdam City Council, Department of Urban Development" ;
+    ex:issueDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+    ex:expiryDate "2030-01-15T00:00:00"^^xsd:dateTime ;
+    ex:permitScope [
+        a ex:PermitScope ;
+        ex:approvedUse "Commercial" ;
+        ex:maxOccupancy [
+            a ex:OccupancyDetails ;
+            ex:maxOccupancyGroundFloor 50 ;
+            ex:maxOccupancyOtherFloors 30
+        ] ;
+        ex:allowedModifications [
+            a ex:ModificationDetails ;
+            ex:addition "Solar panels on the roof" ;
+            ex:addition "Installation of an elevator system in the central shaft"
+        ]
+    ] ;
+    ex:safetyComplianceNote 
+        "This permit is contingent upon compliance with fire safety regulations." .
+
+# Room 101 (unchanged from previous graph)
+ex:Room101 a ex:Room ;
+    rdfs:label "Room 101" ;
+    ex:type "Office" ;
+    ex:area "50 square meters"^^xsd:string ;
+    ex:hasSteelBeam ex:SB101 .
+
+# Steel Beam SB101 in Room 101 (unchanged from previous graph)
+ex:SB101 a ex:SteelBeam ;
+    rdfs:label "Steel Beam SB101" ;
+    ex:diameter "0.5 meters"^^xsd:string ;
+    ex:material "Steel Grade S235" .
+
+# Room 102 (unchanged from previous graph)
+ex:Room102 a ex:Room ;
+    rdfs:label "Room 102" ;
+    ex:type "Conference Room" ;
+    ex:area "75 square meters"^^xsd:string ;
+    ex:hasSteelBeam ex:SB102 .
+
+# Steel Beam SB102 in Room 102 (unchanged from previous graph)
+ex:SB102 a ex:SteelBeam ;
+    rdfs:label "Steel Beam SB102" ;
+    ex:diameter "0.7 meters"^^xsd:string ;
+    ex:material "Steel Grade S355" .
+
+# Room 201 (unchanged from previous graph)
+ex:Room201 a ex:Room ;
+    rdfs:label "Room 201" ;
+    ex:type "Office" ;
+    ex:area "45 square meters"^^xsd:string ;
+    ex:hasSteelBeam ex:SB201 .
+
+# Steel Beam SB201 in Room 201 (unchanged from previous graph)
+ex:SB201 a ex:SteelBeam ;
+    rdfs:label "Steel Beam SB201" ;
+    ex:diameter "0.6 meters"^^xsd:string ;
+    ex:material "Steel Grade S235" .
